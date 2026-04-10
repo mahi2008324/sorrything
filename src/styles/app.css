@@ -1,0 +1,244 @@
+:root {
+  --bg-1: #fff4f8;
+  --bg-2: #f8f2ff;
+  --bg-3: #fff6ed;
+  --text-main: #3f3148;
+  --text-soft: #6f5f77;
+  --card: rgba(255, 255, 255, 0.82);
+  --card-strong: rgba(255, 255, 255, 0.95);
+  --accent: #d469a8;
+  --accent-soft: #b38cff;
+  --warm: #ff9770;
+  --shadow: 0 18px 45px rgba(98, 71, 121, 0.15);
+  --radius-xl: 28px;
+  --radius-md: 18px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Nunito', 'Segoe UI', Tahoma, sans-serif;
+  color: var(--text-main);
+  background:
+    radial-gradient(circle at 10% 10%, rgba(255, 175, 204, 0.35), transparent 36%),
+    radial-gradient(circle at 88% 16%, rgba(188, 160, 255, 0.34), transparent 40%),
+    linear-gradient(140deg, var(--bg-1), var(--bg-2), var(--bg-3));
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.app-shell {
+  min-height: 100vh;
+}
+
+.landing-screen {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 28px;
+}
+
+.landing-card {
+  width: min(680px, 100%);
+  border-radius: var(--radius-xl);
+  padding: 48px 34px;
+  background: var(--card-strong);
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.landing-kicker {
+  color: var(--accent);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.landing-card h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.9rem, 6vw, 3.1rem);
+  margin-bottom: 12px;
+}
+
+.landing-text {
+  color: var(--text-soft);
+  max-width: 36ch;
+  margin: 0 auto 26px;
+  line-height: 1.6;
+}
+
+.main-content {
+  width: min(860px, calc(100% - 24px));
+  margin: 26px auto;
+  padding-bottom: 52px;
+}
+
+.simple-intro {
+  text-align: center;
+  margin: 14px auto 26px;
+  padding: 16px 12px;
+}
+
+.simple-label {
+  color: var(--accent);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+
+.simple-intro h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.5rem, 4.3vw, 2.3rem);
+  font-weight: 600;
+}
+
+section {
+  margin-bottom: 26px;
+}
+
+.panel {
+  background: var(--card);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow);
+  padding: clamp(22px, 5vw, 36px);
+}
+
+.panel h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.5rem, 3.8vw, 2.2rem);
+  margin-bottom: 16px;
+}
+
+.apology-typing {
+  color: var(--text-soft);
+  line-height: 1.8;
+  min-height: 124px;
+  white-space: pre-line;
+}
+
+.cursor {
+  margin-left: 2px;
+  opacity: 0.8;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  50.1%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.reason-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.reason-card {
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.85);
+  padding: 18px;
+  box-shadow: 0 12px 24px rgba(106, 84, 122, 0.11);
+}
+
+.reason-card p {
+  color: var(--text-soft);
+  line-height: 1.6;
+}
+
+.final-copy,
+.response-text {
+  color: var(--text-soft);
+  line-height: 1.6;
+}
+
+.final-panel {
+  text-align: center;
+}
+
+.decision-wrap {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+}
+
+.primary-btn,
+.secondary-btn {
+  border-radius: 999px;
+  padding: 11px 20px;
+  font-weight: 700;
+  transition:
+    transform 0.24s ease,
+    box-shadow 0.24s ease,
+    background 0.24s ease;
+}
+
+.primary-btn {
+  color: white;
+  background: linear-gradient(140deg, var(--accent), var(--warm));
+  box-shadow: 0 14px 24px rgba(212, 105, 168, 0.35);
+}
+
+.secondary-btn {
+  background: #fff;
+  color: var(--text-main);
+}
+
+.primary-btn:hover,
+.secondary-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 24px rgba(99, 70, 110, 0.2);
+}
+
+.response-text {
+  margin-top: 14px;
+  font-weight: 700;
+}
+
+@media (max-width: 900px) {
+  .reason-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .main-content {
+    width: calc(100% - 20px);
+  }
+
+  .simple-intro {
+    margin-top: 6px;
+  }
+}
